@@ -29,7 +29,7 @@ String[] menu;
         //MENU
         drawerLayout=findViewById(R.id.drawer);
         listView=findViewById(R.id.list_view);
-        menu=new String[]{"Intent Project","Recycler View Project"};
+        menu=new String[]{"Intent Project","Recycler View Project","Oghat Sharei"};
         ArrayAdapter<String> adapter=new ArrayAdapter<>(this,android.R.layout.simple_list_item_1,menu);
         listView.setAdapter(adapter);
         listView.setOnItemClickListener(new AdapterView.OnItemClickListener() {
@@ -40,6 +40,10 @@ String[] menu;
                 }
                 else if (menu[position]==menu[1]){
                     Intent intent = new Intent(MainActivity.this,RecyclerActivity.class);
+                    startActivity(intent);
+                }
+                else if (menu[position]==menu[2]){
+                    Intent intent = new Intent(MainActivity.this,OghatActivity.class);
                     startActivity(intent);
                 }
             }
